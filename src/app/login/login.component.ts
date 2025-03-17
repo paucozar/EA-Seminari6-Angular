@@ -11,7 +11,7 @@ import { OnInit } from '@angular/core';
   styleUrl: './login.component.css',
   standalone: true
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   
 
 
@@ -29,12 +29,7 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(8)]], 
     });
   }
-ngOnInit(): void {
-    this.formularioLogin = this.form.group({
-      email: ['eve.holt@reqres.in', [Validators.required, Validators.email]], // Valor predeterminado para el email
-      password: ['cityslicka', [Validators.required, Validators.minLength(8)]] // Valor predeterminado para la contraseña
-    });
-  }
+
   hasError(controlName:string, errorType:string){
     return this.formularioLogin.get(controlName)?.hasError(errorType) && this.formularioLogin.get(controlName)?.touched;  
   }

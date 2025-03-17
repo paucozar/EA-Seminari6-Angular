@@ -6,6 +6,8 @@ import { ConfirmDialogComponent } from '../confirmDialog/confirm-dialog.componen
 import { MatDialog } from '@angular/material/dialog';
 import { NombrePipe } from '../pipes/nombre.pipe';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-colaboradores',
@@ -20,7 +22,7 @@ export class ColaboradoresComponent {
   //Para recibir el usuario que proviene del componente usuario
   @Input() usuario: User = new User();
 
-  constructor() {
+  constructor(private router: Router, private location: Location) {
     this.users = [];
   }
 
@@ -71,5 +73,9 @@ export class ColaboradoresComponent {
         this.users.splice(i, 1);
     }
     });
+  }
+
+  goBack(){
+    this.location.back();
   }
 }

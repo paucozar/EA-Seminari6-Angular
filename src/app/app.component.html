@@ -3,7 +3,14 @@
     <app-usuario></app-usuario>
 }
 @else  {
-    <app-login (exportLoggedIn)="getLoggedIn($event)"></app-login>
+    <div class="container">
+        <div class="form-container">
+          <app-login (exportLoggedIn)="getLoggedIn($event)"></app-login>
+        </div>
+        <div class="form-container">
+          <app-register></app-register>
+        </div>
+      </div>
 }
 
 <router-outlet />

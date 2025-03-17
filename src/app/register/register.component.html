@@ -1,0 +1,33 @@
+<div class="register-container">
+    <h2>Registro</h2>
+    <form [formGroup]="formularioRegistro" (ngSubmit)="register()">
+      <div>
+        <label for="name">Nombre:</label>
+        <input id="name" formControlName="name" type="text">
+        <div *ngIf="hasError('name', 'required')">El nombre es requerido.</div>
+      </div>
+  
+      <div>
+        <label for="age">Edad:</label>
+        <input id="age" formControlName="age" type="number">
+        <div *ngIf="hasError('age', 'required')">La edad es requerida.</div>
+        <div *ngIf="hasError('age', 'min')">La edad debe ser mayor a 0.</div>
+      </div>
+  
+      <div>
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" type="email">
+        <div *ngIf="hasError('email', 'required')">El email es requerido.</div>
+        <div *ngIf="hasError('email', 'email')">El email no es válido.</div>
+      </div>
+  
+      <div>
+        <label for="password">Contraseña:</label>
+        <input id="password" formControlName="password" type="password">
+        <div *ngIf="hasError('password', 'required')">La contraseña es requerida.</div>
+        <div *ngIf="hasError('password', 'minlength')">La contraseña debe tener al menos 8 caracteres.</div>
+      </div>
+  
+      <button type="submit">Registrar</button>
+    </form>
+  </div>

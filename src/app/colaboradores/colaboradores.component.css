@@ -1,13 +1,18 @@
 .boton-container {
     display: flex;
-    align-items: center;
-    margin-top: 10px;
-    font-size: 20px;
-    justify-content: center;
-}
-.listar-container{
-    text-align: center;
-    margin-top: 10px;     
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px
-}
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .listar-boton, .volver-boton {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .listar-boton:hover, .volver-boton:hover {
+    background-color: #0056b3;
+  }
